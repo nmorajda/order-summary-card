@@ -1,0 +1,196 @@
+$breakpoint: 800px;
+
+// COLORS
+
+// primary
+$pale-blue       : #e0e8ff;
+$bright-blue     : #3829e0;
+//  natural
+$very-pale-blue  : #f5f7ff;
+$desaturated-blue: #7280a7;
+$dark-blue       : #1f2f56;
+
+// FONTS
+$font-family-primary: 'Red Hat Display',
+sans-serif;
+
+html {
+    font-size : 62.5%;
+    box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+    margin    : 0;
+    padding   : 0;
+    box-sizing: inherit;
+}
+
+body {
+    min-height : 100vh;
+    font-family: $font-family-primary;
+    font-size  : 1.6rem;
+    padding    : 3rem;
+
+    display          : flex;
+    flex-direction   : column;
+    justify-content  : center;
+    align-items      : center;
+    background-color : $pale-blue;
+    background-image : url('../images/pattern-background-mobile.svg');
+    background-repeat: no-repeat;
+    background-size  : contain;
+
+    @media (min-width: $breakpoint) {
+        background-image: url('../images/pattern-background-desktop.svg');
+    }
+}
+
+img {
+    width: 100%;
+}
+
+.card {
+    $breakpoint: 480px;
+
+    margin-bottom   : 6.4rem;
+    max-width       : 45rem;
+    background-color: white;
+    border-radius   : 1.5rem;
+    overflow        : hidden;
+    box-shadow      : 0px 7px 20px 5px rgba(0, 0, 0, 0.13);
+
+    &__body {
+        padding: 3rem;
+
+        @media (min-width: $breakpoint) {
+            padding: 4.8rem;
+        }
+    }
+
+    &__text {
+        margin-bottom: 3.2rem;
+
+        .title {
+            margin-bottom: 1.6rem;
+            color        : $dark-blue;
+            text-align   : center;
+            font-size    : 1.4em;
+            font-weight  : 900;
+        }
+
+        .desc {
+            color         : $desaturated-blue;
+            text-align    : center;
+            font-size     : .9em;
+            line-height   : 1.6;
+            letter-spacing: 0.6px;
+        }
+    }
+
+    &__plan {
+        margin-bottom   : 3.2rem;
+        padding         : 3.2rem;
+        background-color: rgba(56, 41, 224, 0.04);
+        border-radius   : 1rem;
+        display         : flex;
+        flex-direction  : column;
+        align-items     : center;
+
+
+        @media (min-width: $breakpoint) {
+            padding        : 1.6rem;
+            display        : flex;
+            flex-direction : row;
+            justify-content: space-between;
+            align-items    : center;
+        }
+
+        &__desc {
+            margin-bottom : 1.6rem;
+            text-align    : center;
+            display       : flex;
+            flex-direction: column;
+            align-items   : center;
+
+            @media (min-width: $breakpoint) {
+                margin-bottom : 0;
+                text-align    : left;
+                flex-direction: row;
+            }
+
+            img {
+                max-width    : 7.2rem;
+                margin-bottom: 1.6rem;
+
+                @media (min-width: $breakpoint) {
+                    max-width    : 4.8rem;
+                    margin-right : 1.6rem;
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        &__action {
+            a {
+                color      : $bright-blue;
+                font-weight: 700;
+
+                &:hover {
+                    opacity        : 0.7;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .price {
+            color    : $desaturated-blue;
+            font-size: 0.85em;
+
+        }
+    }
+
+    &__buttons {
+        display       : flex;
+        flex-direction: column;
+
+        button:not(:last-child) {
+            margin-bottom: 1.6rem;
+        }
+    }
+}
+
+.btn {
+    border       : none;
+    padding      : 1.6rem;
+    font-size    : 1.6rem;
+    font-weight  : 700;
+    border-radius: 1rem;
+    width        : 100%;
+    cursor       : pointer;
+
+    &--primary {
+        color           : #f5f7ff;
+        background-color: $bright-blue;
+        box-shadow      : 0px 7px 20px 5px rgba(56, 41, 224, 0.3);
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    &--transparent {
+        color           : $desaturated-blue;
+        background-color: transparent;
+
+        &:hover {
+            color: $dark-blue;
+        }
+    }
+}
+
+.attribution {
+    font-size : .85em;
+    text-align: center;
+}
